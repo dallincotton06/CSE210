@@ -24,7 +24,7 @@ class Program {
     static void loopUntilComplete() {
         int guess;
         do {
-            Console.WriteLine("Whart is your Guess? ");
+            Console.WriteLine("What is your Guess? ");
             guess = int.Parse(Console.ReadLine());
         } while (respond(guess));
     }
