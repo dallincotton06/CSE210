@@ -17,7 +17,7 @@ class Program
     }
 
     static int PromptUserNumber() {
-        Console.WriteLine("What is your Favority Number? ");
+        Console.WriteLine("What is your Favorite Number? ");
         return int.Parse(Console.ReadLine());
     }
 
