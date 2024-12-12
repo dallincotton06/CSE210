@@ -2,9 +2,9 @@ using FinalProject.Shape;
 
 namespace FinalProject.Triangulator;
 
-public class SeidelTriangulator : Triangulator {
+public class SeidelTriangulator : ITriangulator {
 
-    public override List<Triangle> computeTriangles() {
+    public List<Triangle> computeTriangles(Polygon polygon) {
         return new List<Triangle>();
     }
 }

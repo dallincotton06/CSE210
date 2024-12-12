@@ -2,7 +2,7 @@ using OpenTK.Graphics.OpenGL4;
 
 namespace FinalProject.Rendering;
 
-public class ShaderBatch {
+public class ShaderBatch : IBatch {
     
     private int shaderProgram;
     
@@ -54,7 +54,12 @@ public class ShaderBatch {
         return shader;
     }
 
-    public int getShaderProgram() {
-        return shaderProgram;
+    public void prepareShaderProgram() {
+        GL.UseProgram(shaderProgram);
+        GL.Uniform4(GL.GetUniformLocation(shaderProgram, "uColor"), 1.0f, 1.0f, 1.0f, 1.0f);
+    }
+
+    public void dispose() {
+        GL.DeleteProgram(shaderProgram);
     }
 }

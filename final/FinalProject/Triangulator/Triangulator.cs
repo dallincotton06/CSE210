@@ -2,8 +2,6 @@ using FinalProject.Shape;
 
 namespace FinalProject.Triangulator;
 
-public abstract class Triangulator {
-    private Polygon polygon;
-
-    public abstract List<Triangle> computeTriangles();
+public interface ITriangulator { 
+    List<Triangle> computeTriangles(Polygon polygon);
 }
