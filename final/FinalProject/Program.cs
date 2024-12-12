@@ -1,4 +1,5 @@
 using System;
+using FinalProject.Benchmark;
 using FinalProject.Rendering;
 using FinalProject.Shape;
 using FinalProject.Triangulator;
@@ -11,15 +12,10 @@ class Program {
     
     public static void Main(string[] args) {
 
-        EarClippingTriangulator triangulator = new();
-        triangulator.computeTriangles(new Polygon(new float[] {
-            0.75f, -0.3f,       // Vertex 1 (right)
-            0.425f, -0.083f,    // Vertex 2 (top-right)
-            0.175f, -0.083f,    // Vertex 3 (top-left)
-            0.05f, -0.3f,       // Vertex 4 (left)
-            0.175f, -0.517f,    // Vertex 5 (bottom-left)
-            0.425f, -0.517f     // Vertex 6 (bottom-right)
-        }.ToList()));
+        TriangulatorBenchmark benchmark = new TriangulatorBenchmark();
+        benchmark.run();
+        
+        //this part is broken
         GLWindow window = new GLWindow();
         window.Run();
     }

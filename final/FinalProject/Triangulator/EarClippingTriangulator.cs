@@ -25,7 +25,7 @@ public class EarClippingTriangulator : ITriangulator {
             Triangle triangleToRemove = getAdjacentVertecies(polygon, earIndex);
             extractedTriangles.Add(triangleToRemove);
             clipPolygon(polygon, earIndex);
-            Console.WriteLine("Triangle Extracted: [{0}]", string.Join(", ",triangleToRemove.getVertices()));
+            Console.WriteLine("[Triangle Extracted]: [{0}]", string.Join(", ",triangleToRemove.getVertices()));
             computeTriangles(polygon);
         }
         
@@ -80,7 +80,7 @@ public class EarClippingTriangulator : ITriangulator {
 
     private Polygon clipPolygon(Polygon polygon, int index) {
         Polygon newPolygon = polygon;
-        Console.WriteLine("Clipping Polygon: [{0}]"  + " - Removing: (" + polygon.getVertices()[index] + "," + polygon.getVertices()[index + 1] + ")", string.Join(", ", polygon.getVertices()));
+        Console.WriteLine("[Clipping Polygon]: [{0}]"  + " - Removing: (" + polygon.getVertices()[index] + "," + polygon.getVertices()[index + 1] + ")", string.Join(", ", polygon.getVertices()));
         newPolygon.getVertices().RemoveRange(index, 2);
         return newPolygon;
     }
@@ -93,7 +93,6 @@ public class EarClippingTriangulator : ITriangulator {
         float y3 = triangle.getVertices()[5]; // iy - 1  (C)
 
         float product = (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1);
-       // Console.WriteLine("[Cross Product]:  + (" + x2 + " - x1) * (" + y3 + " - " + y1 + ") - (" + y2+ " - " + y1 + ") * (" + x3 +" - " + x1 + ") = " + product);
         return product;
     }
 
