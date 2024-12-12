@@ -8,6 +8,8 @@ public class TriangulatorBenchmark {
     private TriangulatorBatch batch;
 
     public TriangulatorBenchmark() {
+        
+        // You may choose to Add any polygon you may feel. Remmeber to properly triangulate and render for OpenGL, vertices must be in counterclockwise order.
         batch = new TriangulatorBatch();
         batch.add(new Polygon(new float[] {
             0.75f, -0.3f,       // Vertex 1 (right)
